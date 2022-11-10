@@ -47,7 +47,7 @@ export default async function handler(
   const conflictingScheduling = await prisma.scheduling.findFirst({
     where: {
       user_id: user.id,
-      date: format(new Date(date), 'yyyy-MM-dd'),
+      date: new Date(format(new Date(date), 'yyyy-MM-dd')),
     },
   })
 
